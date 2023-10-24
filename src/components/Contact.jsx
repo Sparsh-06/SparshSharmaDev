@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Contact = () => {
@@ -7,13 +6,13 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   // const navigate = useNavigate();
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const formData = { name, email, message };
 
-      const response = await fetch(`http://localhost:3200/api/contact`, {
+      const response = await fetch(`${import.meta.env.VITE_API_KEY}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,7 +30,7 @@ const Contact = () => {
         toast.error("An Error Occured");
       }
     } catch (error) {
-      toast.error("Error:");
+      console.error("Error:");
     }
   };
 
