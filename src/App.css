@@ -1,0 +1,5 @@
+body{
+    background-image: url("/public/nnnoise.svg");
+    font-family: 'Quicksand', sans-serif;
+    scroll-behavior: smooth;
+}
